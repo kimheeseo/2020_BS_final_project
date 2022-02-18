@@ -8,7 +8,7 @@
 /* Prototype statements for functions found within this Example */
 void InitEPwm5Module(void);
 interrupt void EPwm5Isr(void);
-interrupt void adc_isr(void);               // ADC юнем╥╢ф╝ гт╪Ж ╪╠╬П
+interrupt void adc_isr(void);               // ADC Л²╦М└╟К÷╫М┼╦ М∙╗Л┬≤ Л└═Л√╦
 
 /* Global variables used in this Example */
 Uint16   BackTicker;
@@ -32,7 +32,7 @@ Uint16 SW1_cnt, SW2_cnt, SW3_cnt, SW4_cnt;
 
 volatile unsigned int mode = 0, mode2 = 0, stop1 = 0, stop2 = 0;
 
-interrupt void Xint3_isr(void) //╧Жф╟1~
+interrupt void Xint3_isr(void) //К╡└М┼╪1~
 {
 	SW1_cnt++;
 	mode++;
@@ -129,26 +129,26 @@ void main(void)
 	EDIS;
 
 	//============================================================================================
-	// Step 4. GPIO цй╠Бх╜
+	// Step 4. GPIO Л╢┬Й╦╟М≥■
 	//--------------------------------------------------------------------------------------------
 	EALLOW;
-	GpioCtrlRegs.GPBMUX1.bit.GPIO44 = 0;      // ги ╠Б╢и╪╠ец: GPIO44
-	GpioCtrlRegs.GPBMUX1.bit.GPIO45 = 0;      // ги ╠Б╢и╪╠ец: GPIO45
-	GpioCtrlRegs.GPBMUX1.bit.GPIO46 = 0;      // ги ╠Б╢и╪╠ец: GPIO46
-	GpioCtrlRegs.GPBMUX1.bit.GPIO47 = 0;      // ги ╠Б╢и╪╠ец: GPIO47
-	GpioCtrlRegs.GPBDIR.bit.GPIO44 = 0;         // GPIO44 ютцБ╥б ╪╠ец: Input
-	GpioCtrlRegs.GPBDIR.bit.GPIO45 = 0;         // GPIO45 ютцБ╥б ╪╠ец: Input
-	GpioCtrlRegs.GPBDIR.bit.GPIO46 = 0;         // GPIO46 ютцБ╥б ╪╠ец: Input
-	GpioCtrlRegs.GPBDIR.bit.GPIO47 = 0;         // GPIO47 ютцБ╥б ╪╠ец: Input
+	GpioCtrlRegs.GPBMUX1.bit.GPIO44 = 0;      // М∙─ Й╦╟К┼╔Л└═М┐²: GPIO44
+	GpioCtrlRegs.GPBMUX1.bit.GPIO45 = 0;      // М∙─ Й╦╟К┼╔Л└═М┐²: GPIO45
+	GpioCtrlRegs.GPBMUX1.bit.GPIO46 = 0;      // М∙─ Й╦╟К┼╔Л└═М┐²: GPIO46
+	GpioCtrlRegs.GPBMUX1.bit.GPIO47 = 0;      // М∙─ Й╦╟К┼╔Л└═М┐²: GPIO47
+	GpioCtrlRegs.GPBDIR.bit.GPIO44 = 0;         // GPIO44 Л·┘Л╤°К═╔ Л└═М┐²: Input
+	GpioCtrlRegs.GPBDIR.bit.GPIO45 = 0;         // GPIO45 Л·┘Л╤°К═╔ Л└═М┐²: Input
+	GpioCtrlRegs.GPBDIR.bit.GPIO46 = 0;         // GPIO46 Л·┘Л╤°К═╔ Л└═М┐²: Input
+	GpioCtrlRegs.GPBDIR.bit.GPIO47 = 0;         // GPIO47 Л·┘Л╤°К═╔ Л└═М┐²: Input
 	EDIS;
 	//============================================================================================
 
 
 	//============================================================================================
-	// Step 5. Qualification цй╠Бх╜
+	// Step 5. Qualification Л╢┬Й╦╟М≥■
 	//--------------------------------------------------------------------------------------------
 	EALLOW;
-	GpioCtrlRegs.GPBCTRL.bit.QUALPRD1 = 0xFF;   // (GPIO40~GPIO47) Qual period ╪Ёа╓
+	GpioCtrlRegs.GPBCTRL.bit.QUALPRD1 = 0xFF;   // (GPIO40~GPIO47) Qual period Л└╓Л═∙
 	GpioCtrlRegs.GPBQSEL1.bit.GPIO44 = 2;      // Qualification using 6 samples
 	GpioCtrlRegs.GPBQSEL1.bit.GPIO45 = 2;      // Qualification using 6 samples
 	GpioCtrlRegs.GPBQSEL1.bit.GPIO46 = 2;      // Qualification using 6 samples
@@ -158,64 +158,64 @@ void main(void)
 
 
 	//============================================================================================
-	// Step 6. XINT цй╠Бх╜
+	// Step 6. XINT Л╢┬Й╦╟М≥■
 	//--------------------------------------------------------------------------------------------
 	EALLOW;
-	GpioIntRegs.GPIOXINT3SEL.bit.GPIOSEL = 47;   // ©э╨н юнем╥╢ф╝ XINT3╥н ╩Г©Кгр ги ╪╠ец: GPIO47
-	GpioIntRegs.GPIOXINT4SEL.bit.GPIOSEL = 46;   // ©э╨н юнем╥╢ф╝ XINT4╥н ╩Г©Кгр ги ╪╠ец: GPIO46
-	GpioIntRegs.GPIOXINT5SEL.bit.GPIOSEL = 45;   // ©э╨н юнем╥╢ф╝ XINT5╥н ╩Г©Кгр ги ╪╠ец: GPIO45
-	GpioIntRegs.GPIOXINT6SEL.bit.GPIOSEL = 44;   // ©э╨н юнем╥╢ф╝ XINT6╥н ╩Г©Кгр ги ╪╠ец: GPIO44
+	GpioIntRegs.GPIOXINT3SEL.bit.GPIOSEL = 47;   // Л≥╦К╤─ Л²╦М└╟К÷╫М┼╦ XINT3К║° Л┌╛Л ╘М∙═ М∙─ Л└═М┐²: GPIO47
+	GpioIntRegs.GPIOXINT4SEL.bit.GPIOSEL = 46;   // Л≥╦К╤─ Л²╦М└╟К÷╫М┼╦ XINT4К║° Л┌╛Л ╘М∙═ М∙─ Л└═М┐²: GPIO46
+	GpioIntRegs.GPIOXINT5SEL.bit.GPIOSEL = 45;   // Л≥╦К╤─ Л²╦М└╟К÷╫М┼╦ XINT5К║° Л┌╛Л ╘М∙═ М∙─ Л└═М┐²: GPIO45
+	GpioIntRegs.GPIOXINT6SEL.bit.GPIOSEL = 44;   // Л≥╦К╤─ Л²╦М└╟К÷╫М┼╦ XINT6К║° Л┌╛Л ╘М∙═ М∙─ Л└═М┐²: GPIO44
 	EDIS;
 
-	XIntruptRegs.XINT3CR.bit.POLARITY = 0;      // XINT3 юнем╥╢ф╝ ╧ъ╩Щ а╤╟г ╪Ёа╓: ют╥б ╫ехёюг го╟╜ ©╖аЖ
-	XIntruptRegs.XINT4CR.bit.POLARITY = 0;      // XINT4 юнем╥╢ф╝ ╧ъ╩Щ а╤╟г ╪Ёа╓: ют╥б ╫ехёюг ╩С╫б ©╖аЖ
-	XIntruptRegs.XINT5CR.bit.POLARITY = 0;      // XINT5 юнем╥╢ф╝ ╧ъ╩Щ а╤╟г ╪Ёа╓: ют╥б ╫ехёюг го╟╜ ©╖аЖ
-	XIntruptRegs.XINT6CR.bit.POLARITY = 0;      // XINT6 юнем╥╢ф╝ ╧ъ╩Щ а╤╟г ╪Ёа╓: ют╥б ╫ехёюг го╟╜ & ╩С╫б ©╖аЖ
+	XIntruptRegs.XINT3CR.bit.POLARITY = 0;      // XINT3 Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л║╟Й╠╢ Л└╓Л═∙: Л·┘К═╔ Л▀═М≤╦Л²≤ М∙≤Й╟∙ Л≈ёЛ╖─
+	XIntruptRegs.XINT4CR.bit.POLARITY = 0;      // XINT4 Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л║╟Й╠╢ Л└╓Л═∙: Л·┘К═╔ Л▀═М≤╦Л²≤ Л┐│Л┼╧ Л≈ёЛ╖─
+	XIntruptRegs.XINT5CR.bit.POLARITY = 0;      // XINT5 Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л║╟Й╠╢ Л└╓Л═∙: Л·┘К═╔ Л▀═М≤╦Л²≤ М∙≤Й╟∙ Л≈ёЛ╖─
+	XIntruptRegs.XINT6CR.bit.POLARITY = 0;      // XINT6 Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л║╟Й╠╢ Л└╓Л═∙: Л·┘К═╔ Л▀═М≤╦Л²≤ М∙≤Й╟∙ & Л┐│Л┼╧ Л≈ёЛ╖─
 
-	XIntruptRegs.XINT3CR.bit.ENABLE = 1;        // XINT3 юнем╥╢ф╝ : Enable
-	XIntruptRegs.XINT4CR.bit.ENABLE = 1;        // XINT4 юнем╥╢ф╝ : Enable
-	XIntruptRegs.XINT5CR.bit.ENABLE = 1;        // XINT5 юнем╥╢ф╝ : Enable
-	XIntruptRegs.XINT6CR.bit.ENABLE = 1;        // XINT6 юнем╥╢ф╝ : Enable
+	XIntruptRegs.XINT3CR.bit.ENABLE = 1;        // XINT3 Л²╦М└╟К÷╫М┼╦ : Enable
+	XIntruptRegs.XINT4CR.bit.ENABLE = 1;        // XINT4 Л²╦М└╟К÷╫М┼╦ : Enable
+	XIntruptRegs.XINT5CR.bit.ENABLE = 1;        // XINT5 Л²╦М└╟К÷╫М┼╦ : Enable
+	XIntruptRegs.XINT6CR.bit.ENABLE = 1;        // XINT6 Л²╦М└╟К÷╫М┼╦ : Enable
 
-	// ©э╨н юнемемф╝ фВгу╣х ╧Ием х╟╪╨х╜
-	PieCtrlRegs.PIEIER12.bit.INTx1 = 1;         // PIE юнем╥╢ф╝(XINT3) : Enable
-	PieCtrlRegs.PIEIER12.bit.INTx2 = 1;         // PIE юнем╥╢ф╝(XINT4) : Enable
-	PieCtrlRegs.PIEIER12.bit.INTx3 = 1;         // PIE юнем╥╢ф╝(XINT5) : Enable
-	PieCtrlRegs.PIEIER12.bit.INTx4 = 1;         // PIE юнем╥╢ф╝(XINT6) : Enable
-	IER |= M_INT12;                        // CPU юнем╥╢ф╝(INT12) : Enable
+	// Л≥╦К╤─ Л²╦М└╟М└╟М┼╦ М▐╛М∙╘К░° К╟╠М└╟ М≥°Л└╠М≥■
+	PieCtrlRegs.PIEIER12.bit.INTx1 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT3) : Enable
+	PieCtrlRegs.PIEIER12.bit.INTx2 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT4) : Enable
+	PieCtrlRegs.PIEIER12.bit.INTx3 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT5) : Enable
+	PieCtrlRegs.PIEIER12.bit.INTx4 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT6) : Enable
+	IER |= M_INT12;                        // CPU Л²╦М└╟К÷╫М┼╦(INT12) : Enable
  //============================================================================================
 
 
  //============================================================================================
- // Step 4. ADC цй╠Бх╜
+ // Step 4. ADC Л╢┬Й╦╟М≥■
  //--------------------------------------------------------------------------------------------
 	InitAdc();
 
-	// ADC ╪Ёа╓
+	// ADC Л└╓Л═∙
 	AdcRegs.ADCTRL3.bit.ADCCLKPS = 3;            // ADCCLK = HSPCLK/(ADCCLKPS*2)/(CPS+1)
 	AdcRegs.ADCTRL1.bit.CPS = 1;            // ADCCLK = 75MHz/(3*2)/(1+1) = 6.25MHz
-	AdcRegs.ADCTRL1.bit.ACQ_PS = 3;            // ╩Ыгц/х╕╣Е ╩Гюле╛ = ACQ_PS + 1 = 4 (ADCCLK╠Баь)
-	AdcRegs.ADCTRL1.bit.SEQ_CASC = 1;         // ╫цдЖ╫╨ ╦П╣Е ╪Ёа╓: аВ╥д ╫цдЖ╫╨ ╦П╣Е (0:╨╢╥д ╦П╣Е, 1:аВ╥д ╦П╣Е)
-	AdcRegs.ADCMAXCONV.bit.MAX_CONV1 = 1;      // ADC ц╓Ён╪Ж ╪Ёа╓: 1╟Ё(=MAX_CONV+1)ц╓Ёню╩ ADC
-	AdcRegs.ADCCHSELSEQ1.bit.CONV00 = 0;       // ADC ╪Ь╪╜ ╪Ёа╓: ц╧╧Ьб╟╥н ADCINA2 ц╓Ёню╩ ADC
-	AdcRegs.ADCCHSELSEQ1.bit.CONV01 = 8;       // ADC ╪Ь╪╜ ╪Ёа╓: 2╧Ьб╟╥н ADCINB0 ц╓Ёню╩ ADC
+	AdcRegs.ADCTRL1.bit.ACQ_PS = 3;            // Л┐≤М■▄/М≥─К⌠° Л┌╛Л²╢М│╢ = ACQ_PS + 1 = 4 (ADCCLKЙ╦╟Л╓─)
+	AdcRegs.ADCTRL1.bit.SEQ_CASC = 1;         // Л▀°М──Л┼╓ К╙╗К⌠° Л└╓Л═∙: Л╖│К═╛ Л▀°М──Л┼╓ К╙╗К⌠° (0:КЁ▒К═╛ К╙╗К⌠°, 1:Л╖│К═╛ К╙╗К⌠°)
+	AdcRegs.ADCMAXCONV.bit.MAX_CONV1 = 1;      // ADC Л╠└К└░Л┬≤ Л└╓Л═∙: 1Й╟°(=MAX_CONV+1)Л╠└К└░Л²└ ADC
+	AdcRegs.ADCCHSELSEQ1.bit.CONV00 = 0;       // ADC Л┬°Л└° Л└╓Л═∙: Л╡╚К╡┬Л╖╦К║° ADCINA2 Л╠└К└░Л²└ ADC
+	AdcRegs.ADCCHSELSEQ1.bit.CONV01 = 8;       // ADC Л┬°Л└° Л└╓Л═∙: 2К╡┬Л╖╦К║° ADCINB0 Л╠└К└░Л²└ ADC
 
-	AdcRegs.ADCTRL2.bit.EPWM_SOCB_SEQ = 1;       // ePWM_SOCB╥н ADC ╫цдЖ╫╨ ╫ц╣©
-	AdcRegs.ADCTRL2.bit.INT_ENA_SEQ1 = 1;      // ADC ╫цдЖ╫╨ ©о╥А╫ц юнем╥╢ф╝ ╧ъ╩Щ ╪Ёа╓
+	AdcRegs.ADCTRL2.bit.EPWM_SOCB_SEQ = 1;       // ePWM_SOCBК║° ADC Л▀°М──Л┼╓ Л▀°К▐≥
+	AdcRegs.ADCTRL2.bit.INT_ENA_SEQ1 = 1;      // ADC Л▀°М──Л┼╓ Л≥└Кё▄Л▀° Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л└╓Л═∙
 
-	//ePWM_SOCB юл╨╔ф╝ ф╝╦╝╟е ╪Ёа╓
-	EPwm5Regs.ETSEL.bit.SOCBEN = 1;            // SOCB юл╨╔ф╝ ф╝╦╝╟е Enable
-	EPwm5Regs.ETSEL.bit.SOCBSEL = 2;         // SCCB ф╝╦╝╟е а╤╟г : д╚©Нем аж╠Б юод║ ╫ц
-	EPwm5Regs.ETPS.bit.SOCBPRD = 1;            // SOCB юл╨╔ф╝ ╨паж ╪Ёа╓ : ф╝╦╝╟е а╤╟г гя╧Ь ╦╤╢ы
-	EPwm5Regs.TBCTL.bit.CTRMODE = 0;         // д╚©Нф╝ ╦П╣Е ╪Ёа╓: Up-conut ╦П╣Е
+	//ePWM_SOCB Л²╢К╡╓М┼╦ М┼╦К╕╛Й╠╟ Л└╓Л═∙
+	EPwm5Regs.ETSEL.bit.SOCBEN = 1;            // SOCB Л²╢К╡╓М┼╦ М┼╦К╕╛Й╠╟ Enable
+	EPwm5Regs.ETSEL.bit.SOCBSEL = 2;         // SCCB М┼╦К╕╛Й╠╟ Л║╟Й╠╢ : Л╧╢Л ╢М└╟ Лё╪Й╦╟ Л²╪Л╧≤ Л▀°
+	EPwm5Regs.ETPS.bit.SOCBPRD = 1;            // SOCB Л²╢К╡╓М┼╦ К╤└Лё╪ Л└╓Л═∙ : М┼╦К╕╛Й╠╟ Л║╟Й╠╢ М∙°К╡┬ К╖┬К▀╓
+	EPwm5Regs.TBCTL.bit.CTRMODE = 0;         // Л╧╢Л ╢М┼╦ К╙╗К⌠° Л└╓Л═∙: Up-conut К╙╗К⌠°
 	EPwm5Regs.TBCTL.bit.HSPCLKDIV = 1;         // TBCLK = [SYSCLKOUT / ((HSPCLKDIV*2) * 2^(CLKDIV))]
 	EPwm5Regs.TBCTL.bit.CLKDIV = 1;            // TBCLK = [150MHz / (2*2)] = 37.5MHz
-	EPwm5Regs.TBPRD = (TBCLK / PwmCarrierFrequency) - 1;                  // TBаж╠Б= (TBPRD+1)/TBCLK = 1875/37.5MHz = 50us(20KHz)
-	EPwm5Regs.TBCTR = 0x0000;               // TB д╚©Нем цй╠Бх╜
+	EPwm5Regs.TBPRD = (TBCLK / PwmCarrierFrequency) - 1;                  // TBЛё╪Й╦╟= (TBPRD+1)/TBCLK = 1875/37.5MHz = 50us(20KHz)
+	EPwm5Regs.TBCTR = 0x0000;               // TB Л╧╢Л ╢М└╟ Л╢┬Й╦╟М≥■
 
-	// PIEюг ADC юнем╥╢ф╝ х╟╪╨х╜
-	PieCtrlRegs.PIEIER1.bit.INTx6 = 1;         // PIE юнем╥╢ф╝(ADCINT) х╟╪╨х╜
-	IER |= M_INT1;                         // CPU юнем╥╢ф╝(INT1)  х╟╪╨х╜
+	// PIEЛ²≤ ADC Л²╦М└╟К÷╫М┼╦ М≥°Л└╠М≥■
+	PieCtrlRegs.PIEIER1.bit.INTx6 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(ADCINT) М≥°Л└╠М≥■
+	IER |= M_INT1;                         // CPU Л²╦М└╟К÷╫М┼╦(INT1)  М≥°Л└╠М≥■
 	//============================================================================================
 
 
@@ -276,7 +276,7 @@ void main(void)
 			EPwm5Regs.TBPRD = (TBCLK / PwmCarrierFrequency) - 1;
 			PwmDutyRatio = ADC_value01 * 0.475 / 65536;
 			EPwm5Regs.CMPA.half.CMPA = (Uint16)((EPwm5Regs.TBPRD + 1) * PwmDutyRatio);   /* Set Compare A Value to 50% */
-			EPwm5Regs.CMPB = (EPwm5Regs.TBPRD + 1) * (1 - PwmDutyRatio); //╩С╨╦юШ
+			EPwm5Regs.CMPB = (EPwm5Regs.TBPRD + 1) * (1 - PwmDutyRatio); //Л┐│КЁ╢Л═│
 			/* Setup Counter Mode and Clock */
 			EPwm5Regs.TBCTL.bit.CTRMODE = 2;//up-downcount
 			   /* Set Dead-time */
@@ -403,8 +403,8 @@ void InitEPwm5Module(void)
 
 interrupt void adc_isr(void)
 {
-	ADC_value01 = AdcRegs.ADCRESULT0; //╟║╨╞юЗгв a
-	ADC_value02 = AdcRegs.ADCRESULT1; //╟║╨╞юЗгв b
+	ADC_value01 = AdcRegs.ADCRESULT0; //Й╟─КЁ─Л═─М∙╜ a
+	ADC_value02 = AdcRegs.ADCRESULT1; //Й╟─КЁ─Л═─М∙╜ b
 
 
 	AdcRegs.ADCTRL2.bit.RST_SEQ1 = 1;         // Reset SEQ1
