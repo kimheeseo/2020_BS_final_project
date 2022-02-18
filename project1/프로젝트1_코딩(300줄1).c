@@ -39,23 +39,23 @@ void main(void)
    EDIS;
 
    EALLOW;
-   GpioCtrlRegs.GPBMUX1.bit.GPIO44 = 0;      // ги ╠Б╢и╪╠ец: GPIO44
-   GpioCtrlRegs.GPBMUX1.bit.GPIO45 = 0;      // ги ╠Б╢и╪╠ец: GPIO45
-   GpioCtrlRegs.GPBMUX1.bit.GPIO46 = 0;      // ги ╠Б╢и╪╠ец: GPIO46
-   GpioCtrlRegs.GPBMUX1.bit.GPIO47 = 0;      // ги ╠Б╢и╪╠ец: GPIO47
-   GpioCtrlRegs.GPBDIR.bit.GPIO44 = 0;         // GPIO44 ютцБ╥б ╪╠ец: Input
-   GpioCtrlRegs.GPBDIR.bit.GPIO45 = 0;         // GPIO45 ютцБ╥б ╪╠ец: Input
-   GpioCtrlRegs.GPBDIR.bit.GPIO46 = 0;         // GPIO46 ютцБ╥б ╪╠ец: Input
-   GpioCtrlRegs.GPBDIR.bit.GPIO47 = 0;         // GPIO47 ютцБ╥б ╪╠ец: Input
+   GpioCtrlRegs.GPBMUX1.bit.GPIO44 = 0;      // М∙─ Й╦╟К┼╔Л└═М┐²: GPIO44
+   GpioCtrlRegs.GPBMUX1.bit.GPIO45 = 0;      // М∙─ Й╦╟К┼╔Л└═М┐²: GPIO45
+   GpioCtrlRegs.GPBMUX1.bit.GPIO46 = 0;      // М∙─ Й╦╟К┼╔Л└═М┐²: GPIO46
+   GpioCtrlRegs.GPBMUX1.bit.GPIO47 = 0;      // М∙─ Й╦╟К┼╔Л└═М┐²: GPIO47
+   GpioCtrlRegs.GPBDIR.bit.GPIO44 = 0;         // GPIO44 Л·┘Л╤°К═╔ Л└═М┐²: Input
+   GpioCtrlRegs.GPBDIR.bit.GPIO45 = 0;         // GPIO45 Л·┘Л╤°К═╔ Л└═М┐²: Input
+   GpioCtrlRegs.GPBDIR.bit.GPIO46 = 0;         // GPIO46 Л·┘Л╤°К═╔ Л└═М┐²: Input
+   GpioCtrlRegs.GPBDIR.bit.GPIO47 = 0;         // GPIO47 Л·┘Л╤°К═╔ Л└═М┐²: Input
    EDIS;
 
    EALLOW;
-   GpioCtrlRegs.GPCMUX1.all = 0x00000000;      // GPIO64-GPIO79, GPIO ╠Б╢ию╦╥н ╪Ёа╓
-   GpioCtrlRegs.GPCDIR.all = 0x0000FFFF;       // GPI064-GPIO79, цБ╥бю╦╥н ╪Ёа╓
+   GpioCtrlRegs.GPCMUX1.all = 0x00000000;      // GPIO64-GPIO79, GPIO Й╦╟К┼╔Л°╪К║° Л└╓Л═∙
+   GpioCtrlRegs.GPCDIR.all = 0x0000FFFF;       // GPI064-GPIO79, Л╤°К═╔Л°╪К║° Л└╓Л═∙
    EDIS;
 
    EALLOW;
-   GpioCtrlRegs.GPBCTRL.bit.QUALPRD1 = 0xFF;   // (GPIO40~GPIO47) Qual period ╪Ёа╓
+   GpioCtrlRegs.GPBCTRL.bit.QUALPRD1 = 0xFF;   // (GPIO40~GPIO47) Qual period Л└╓Л═∙
    GpioCtrlRegs.GPBQSEL1.bit.GPIO44 = 2;      // Qualification using 6 samples
    GpioCtrlRegs.GPBQSEL1.bit.GPIO45 = 2;      // Qualification using 6 samples
    GpioCtrlRegs.GPBQSEL1.bit.GPIO46 = 2;      // Qualification using 6 samples
@@ -63,28 +63,28 @@ void main(void)
    EDIS;
 
    EALLOW;
-   GpioIntRegs.GPIOXINT3SEL.bit.GPIOSEL = 47;   // ©э╨н юнем╥╢ф╝ XINT3╥н ╩Г©Кгр ги ╪╠ец: GPIO47
-   GpioIntRegs.GPIOXINT4SEL.bit.GPIOSEL = 46;   // ©э╨н юнем╥╢ф╝ XINT4╥н ╩Г©Кгр ги ╪╠ец: GPIO46
-   GpioIntRegs.GPIOXINT5SEL.bit.GPIOSEL = 45;   // ©э╨н юнем╥╢ф╝ XINT5╥н ╩Г©Кгр ги ╪╠ец: GPIO45
-   GpioIntRegs.GPIOXINT6SEL.bit.GPIOSEL = 44;   // ©э╨н юнем╥╢ф╝ XINT6╥н ╩Г©Кгр ги ╪╠ец: GPIO44
+   GpioIntRegs.GPIOXINT3SEL.bit.GPIOSEL = 47;   // Л≥╦К╤─ Л²╦М└╟К÷╫М┼╦ XINT3К║° Л┌╛Л ╘М∙═ М∙─ Л└═М┐²: GPIO47
+   GpioIntRegs.GPIOXINT4SEL.bit.GPIOSEL = 46;   // Л≥╦К╤─ Л²╦М└╟К÷╫М┼╦ XINT4К║° Л┌╛Л ╘М∙═ М∙─ Л└═М┐²: GPIO46
+   GpioIntRegs.GPIOXINT5SEL.bit.GPIOSEL = 45;   // Л≥╦К╤─ Л²╦М└╟К÷╫М┼╦ XINT5К║° Л┌╛Л ╘М∙═ М∙─ Л└═М┐²: GPIO45
+   GpioIntRegs.GPIOXINT6SEL.bit.GPIOSEL = 44;   // Л≥╦К╤─ Л²╦М└╟К÷╫М┼╦ XINT6К║° Л┌╛Л ╘М∙═ М∙─ Л└═М┐²: GPIO44
    EDIS;
 
-   XIntruptRegs.XINT3CR.bit.POLARITY = 2;      // XINT3 юнем╥╢ф╝ ╧ъ╩Щ а╤╟г ╪Ёа╓: ют╥б ╫ехёюг го╟╜ ©╖аЖ
-   XIntruptRegs.XINT4CR.bit.POLARITY = 2;      // XINT4 юнем╥╢ф╝ ╧ъ╩Щ а╤╟г ╪Ёа╓: ют╥б ╫ехёюг го╟╜ ©╖аЖ
-   XIntruptRegs.XINT5CR.bit.POLARITY = 2;      // XINT5 юнем╥╢ф╝ ╧ъ╩Щ а╤╟г ╪Ёа╓: ют╥б ╫ехёюг го╟╜ ©╖аЖ
-   XIntruptRegs.XINT6CR.bit.POLARITY = 2;      // XINT6 юнем╥╢ф╝ ╧ъ╩Щ а╤╟г ╪Ёа╓: ют╥б ╫ехёюг го╟╜ ©╖аЖ
+   XIntruptRegs.XINT3CR.bit.POLARITY = 2;      // XINT3 Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л║╟Й╠╢ Л└╓Л═∙: Л·┘К═╔ Л▀═М≤╦Л²≤ М∙≤Й╟∙ Л≈ёЛ╖─
+   XIntruptRegs.XINT4CR.bit.POLARITY = 2;      // XINT4 Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л║╟Й╠╢ Л└╓Л═∙: Л·┘К═╔ Л▀═М≤╦Л²≤ М∙≤Й╟∙ Л≈ёЛ╖─
+   XIntruptRegs.XINT5CR.bit.POLARITY = 2;      // XINT5 Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л║╟Й╠╢ Л└╓Л═∙: Л·┘К═╔ Л▀═М≤╦Л²≤ М∙≤Й╟∙ Л≈ёЛ╖─
+   XIntruptRegs.XINT6CR.bit.POLARITY = 2;      // XINT6 Л²╦М└╟К÷╫М┼╦ К╟°Л┐² Л║╟Й╠╢ Л└╓Л═∙: Л·┘К═╔ Л▀═М≤╦Л²≤ М∙≤Й╟∙ Л≈ёЛ╖─
 
-   XIntruptRegs.XINT3CR.bit.ENABLE = 1;        // XINT3 юнем╥╢ф╝ : Enable
-   XIntruptRegs.XINT4CR.bit.ENABLE = 1;        // XINT4 юнем╥╢ф╝ : Enable
-   XIntruptRegs.XINT5CR.bit.ENABLE = 1;        // XINT5 юнем╥╢ф╝ : Enable
-   XIntruptRegs.XINT6CR.bit.ENABLE = 1;        // XINT6 юнем╥╢ф╝ : Enable
+   XIntruptRegs.XINT3CR.bit.ENABLE = 1;        // XINT3 Л²╦М└╟К÷╫М┼╦ : Enable
+   XIntruptRegs.XINT4CR.bit.ENABLE = 1;        // XINT4 Л²╦М└╟К÷╫М┼╦ : Enable
+   XIntruptRegs.XINT5CR.bit.ENABLE = 1;        // XINT5 Л²╦М└╟К÷╫М┼╦ : Enable
+   XIntruptRegs.XINT6CR.bit.ENABLE = 1;        // XINT6 Л²╦М└╟К÷╫М┼╦ : Enable
 
-   //  ╧Ием х╟╪╨х╜
-   PieCtrlRegs.PIEIER12.bit.INTx1 = 1;         // PIE юнем╥╢ф╝(XINT3) : Enable
-   PieCtrlRegs.PIEIER12.bit.INTx2 = 1;         // PIE юнем╥╢ф╝(XINT4) : Enable
-   PieCtrlRegs.PIEIER12.bit.INTx3 = 1;         // PIE юнем╥╢ф╝(XINT5) : Enable
-   PieCtrlRegs.PIEIER12.bit.INTx4 = 1;         // PIE юнем╥╢ф╝(XINT6) : Enable
-   IER |= M_INT12;                        // CPU юнем╥╢ф╝(INT12) : Enable
+   //  К╟╠М└╟ М≥°Л└╠М≥■
+   PieCtrlRegs.PIEIER12.bit.INTx1 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT3) : Enable
+   PieCtrlRegs.PIEIER12.bit.INTx2 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT4) : Enable
+   PieCtrlRegs.PIEIER12.bit.INTx3 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT5) : Enable
+   PieCtrlRegs.PIEIER12.bit.INTx4 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT6) : Enable
+   IER |= M_INT12;                        // CPU Л²╦М└╟К÷╫М┼╦(INT12) : Enable
 
    SW1_cnt = 0;
    SW2_cnt = 0;
@@ -131,7 +131,7 @@ void main(void)
    }
 }
 
-interrupt void Xint3_isr(void)                          // (+) юнем╥╢ф╝ ╫ггЮ
+interrupt void Xint3_isr(void)                          // (+) Л²╦М└╟К÷╫М┼╦ Л▀╓М√┴
 {
    SW1_cnt++;
    mode++;
@@ -139,7 +139,7 @@ interrupt void Xint3_isr(void)                          // (+) юнем╥╢ф╝ ╫ггЮ
    {mode = 1;}
    PieCtrlRegs.PIEACK.all = PIEACK_GROUP12;
 }
-interrupt void Xint4_isr(void)                          // (-) юнем╥╢ф╝ ╫ггЮ
+interrupt void Xint4_isr(void)                          // (-) Л²╦М└╟К÷╫М┼╦ Л▀╓М√┴
 {
    SW2_cnt++;
       mode--;
@@ -147,14 +147,14 @@ interrupt void Xint4_isr(void)                          // (-) юнем╥╢ф╝ ╫ггЮ
       {mode = 6;}
    PieCtrlRegs.PIEACK.all = PIEACK_GROUP12;
 }
-interrupt void Xint5_isr(void)                          // (STOP) юнем╥╢ф╝ ╫ггЮ
+interrupt void Xint5_isr(void)                          // (STOP) Л²╦М└╟К÷╫М┼╦ Л▀╓М√┴
 {
    SW3_cnt++;
    state = 0;
    mode = 0;
    PieCtrlRegs.PIEACK.all = PIEACK_GROUP12;
 }
-interrupt void Xint6_isr(void)                          // (START) юнем╥╢ф╝ ╫ггЮ
+interrupt void Xint6_isr(void)                          // (START) Л²╦М└╟К÷╫М┼╦ Л▀╓М√┴
 {
    SW4_cnt++;
    state = 1;
