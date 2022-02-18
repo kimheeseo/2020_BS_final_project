@@ -1,5 +1,5 @@
 //============================================================================================
-// ╪╠гЮцЁ╦╝аЖ╫ц
+// Л└═М√┴Л╡≤К╕╛Л╖─Л▀°
 //--------------------------------------------------------------------------------------------
 #include "DSP28x_Project.h"                  // Device Headerfile and Examples Include File
 //============================================================================================
@@ -11,7 +11,7 @@
 #define timeF 1000000
 #define timeStop 500000
 //============================================================================================
-//   гт╪Ж╪╠╬П
+//   М∙╗Л┬≤Л└═Л√╦
 //--------------------------------------------------------------------------------------------
 interrupt void Xint3_isr(void);
 interrupt void Xint4_isr(void);
@@ -27,7 +27,7 @@ int modeS(int);
 //============================================================================================
 
 //============================================================================================
-// ╫ц╫╨еш©║╪╜╩Г©КгрюЭ©╙╨╞╪Ж╪╠╬П
+// Л▀°Л┼╓М┘°Л≈░Л└°Л┌╛Л ╘М∙═Л═└Л≈╜КЁ─Л┬≤Л└═Л√╦
 //--------------------------------------------------------------------------------------------
 Uint16 Loop_cnt;
 Uint16 SW1_cnt, SW2_cnt, SW3_cnt, SW4_cnt;
@@ -35,7 +35,7 @@ volatile unsigned int i = 0;
 volatile unsigned int mode = 0, stop = 0;
 
 //============================================================================================
-// ╩Г©Кюзгт╪Ж
+// Л┌╛Л ╘Л·░М∙╗Л┬≤
 int modeA(int i)
 {
 	if (i == 1)
@@ -862,7 +862,7 @@ int modeS(int i)
 }
 
 //============================================================================================
-//   ╦чюнгт╪Ж- ╫цюш
+//   К╘■Л²╦М∙╗Л┬≤- Л▀°Л·▒
 //============================================================================================
 void main(void)
 {
@@ -874,14 +874,14 @@ void main(void)
 
 
 	//============================================================================================
-	// Step 2. ╫ц╫╨ешдаф╝╥яцй╠Бх╜:
+	// Step 2. Л▀°Л┼╓М┘°Л╩╗М┼╦К║╓Л╢┬Й╦╟М≥■:
 	//--------------------------------------------------------------------------------------------
 	InitSysCtrl();
 	//============================================================================================
 
 
 	//============================================================================================
-	// Step 3. юнем╥╢ф╝цй╠Бх╜:
+	// Step 3. Л²╦М└╟К÷╫М┼╦Л╢┬Й╦╟М≥■:
 	//--------------------------------------------------------------------------------------------
 	InitPieCtrl();
 	IER = 0x0000;
@@ -899,26 +899,26 @@ void main(void)
 
 
 	//============================================================================================
-	// Step 4. GPIO цй╠Бх╜
+	// Step 4. GPIO Л╢┬Й╦╟М≥■
 	//--------------------------------------------------------------------------------------------
 	EALLOW;
-	GpioCtrlRegs.GPBMUX1.bit.GPIO44 = 0;      // ги╠Б╢и╪╠ец: GPIO44
-	GpioCtrlRegs.GPBMUX1.bit.GPIO45 = 0;      // ги╠Б╢и╪╠ец: GPIO45
-	GpioCtrlRegs.GPBMUX1.bit.GPIO46 = 0;      // ги╠Б╢и╪╠ец: GPIO46
-	GpioCtrlRegs.GPBMUX1.bit.GPIO47 = 0;      // ги╠Б╢и╪╠ец: GPIO47
-	GpioCtrlRegs.GPBDIR.bit.GPIO44 = 0;         // GPIO44 ютцБ╥б╪╠ец: Input
-	GpioCtrlRegs.GPBDIR.bit.GPIO45 = 0;         // GPIO45 ютцБ╥б╪╠ец: Input
-	GpioCtrlRegs.GPBDIR.bit.GPIO46 = 0;         // GPIO46 ютцБ╥б╪╠ец: Input
-	GpioCtrlRegs.GPBDIR.bit.GPIO47 = 0;         // GPIO47 ютцБ╥б╪╠ец: Input
+	GpioCtrlRegs.GPBMUX1.bit.GPIO44 = 0;      // М∙─Й╦╟К┼╔Л└═М┐²: GPIO44
+	GpioCtrlRegs.GPBMUX1.bit.GPIO45 = 0;      // М∙─Й╦╟К┼╔Л└═М┐²: GPIO45
+	GpioCtrlRegs.GPBMUX1.bit.GPIO46 = 0;      // М∙─Й╦╟К┼╔Л└═М┐²: GPIO46
+	GpioCtrlRegs.GPBMUX1.bit.GPIO47 = 0;      // М∙─Й╦╟К┼╔Л└═М┐²: GPIO47
+	GpioCtrlRegs.GPBDIR.bit.GPIO44 = 0;         // GPIO44 Л·┘Л╤°К═╔Л└═М┐²: Input
+	GpioCtrlRegs.GPBDIR.bit.GPIO45 = 0;         // GPIO45 Л·┘Л╤°К═╔Л└═М┐²: Input
+	GpioCtrlRegs.GPBDIR.bit.GPIO46 = 0;         // GPIO46 Л·┘Л╤°К═╔Л└═М┐²: Input
+	GpioCtrlRegs.GPBDIR.bit.GPIO47 = 0;         // GPIO47 Л·┘Л╤°К═╔Л└═М┐²: Input
 
-	GpioCtrlRegs.GPCMUX1.all = 0x00000000;// GPIO64-GPIO79, GPIO ╠Б╢ию╦╥н╪Ёа╓
-	GpioCtrlRegs.GPCDIR.all = 0x0000FFFF;// GPI064-GPIO79, цБ╥бю╦╥н╪Ёа╓
+	GpioCtrlRegs.GPCMUX1.all = 0x00000000;// GPIO64-GPIO79, GPIO Й╦╟К┼╔Л°╪К║°Л└╓Л═∙
+	GpioCtrlRegs.GPCDIR.all = 0x0000FFFF;// GPI064-GPIO79, Л╤°К═╔Л°╪К║°Л└╓Л═∙
 	GpioDataRegs.GPCDAT.all = 0x0000FFFF;
 	EDIS;
 	//============================================================================================
 
 	EALLOW;
-	GpioCtrlRegs.GPBCTRL.bit.QUALPRD1 = 0xFF;   // (GPIO40~GPIO47) Qual period ╪Ёа╓
+	GpioCtrlRegs.GPBCTRL.bit.QUALPRD1 = 0xFF;   // (GPIO40~GPIO47) Qual period Л└╓Л═∙
 	GpioCtrlRegs.GPBQSEL1.bit.GPIO44 = 2;      // Qualification using 6 samples
 	GpioCtrlRegs.GPBQSEL1.bit.GPIO45 = 2;      // Qualification using 6 samples
 	GpioCtrlRegs.GPBQSEL1.bit.GPIO46 = 2;      // Qualification using 6 samples
@@ -926,31 +926,31 @@ void main(void)
 	EDIS;
 
 	//============================================================================================
-	// Step 5. XINT цй╠Бх╜
+	// Step 5. XINT Л╢┬Й╦╟М≥■
 	//--------------------------------------------------------------------------------------------
 	EALLOW;
-	GpioIntRegs.GPIOXINT3SEL.bit.GPIOSEL = 47;   // ©э╨нюнем╥╢ф╝XINT3╥н╩Г©Кгрги╪╠ец: GPIO47
-	GpioIntRegs.GPIOXINT4SEL.bit.GPIOSEL = 46;   // ©э╨нюнем╥╢ф╝XINT4╥н╩Г©Кгрги╪╠ец: GPIO46
-	GpioIntRegs.GPIOXINT5SEL.bit.GPIOSEL = 45;   // ©э╨нюнем╥╢ф╝XINT5╥н╩Г©Кгрги╪╠ец: GPIO45
-	GpioIntRegs.GPIOXINT6SEL.bit.GPIOSEL = 44;   // ©э╨нюнем╥╢ф╝XINT6╥н╩Г©Кгрги╪╠ец: GPIO44
+	GpioIntRegs.GPIOXINT3SEL.bit.GPIOSEL = 47;   // Л≥╦К╤─Л²╦М└╟К÷╫М┼╦XINT3К║°Л┌╛Л ╘М∙═М∙─Л└═М┐²: GPIO47
+	GpioIntRegs.GPIOXINT4SEL.bit.GPIOSEL = 46;   // Л≥╦К╤─Л²╦М└╟К÷╫М┼╦XINT4К║°Л┌╛Л ╘М∙═М∙─Л└═М┐²: GPIO46
+	GpioIntRegs.GPIOXINT5SEL.bit.GPIOSEL = 45;   // Л≥╦К╤─Л²╦М└╟К÷╫М┼╦XINT5К║°Л┌╛Л ╘М∙═М∙─Л└═М┐²: GPIO45
+	GpioIntRegs.GPIOXINT6SEL.bit.GPIOSEL = 44;   // Л≥╦К╤─Л²╦М└╟К÷╫М┼╦XINT6К║°Л┌╛Л ╘М∙═М∙─Л└═М┐²: GPIO44
 	EDIS;
 
-	XIntruptRegs.XINT3CR.bit.POLARITY = 2;      // XINT3 юнем╥╢ф╝╧ъ╩Ща╤╟г╪Ёа╓: ют╥б╫ехёюгго╟╜©╖аЖ
-	XIntruptRegs.XINT4CR.bit.POLARITY = 1;      // XINT4 юнем╥╢ф╝╧ъ╩Ща╤╟г╪Ёа╓: ют╥б╫ехёюг╩С╫б©╖аЖ
-	XIntruptRegs.XINT5CR.bit.POLARITY = 1;      // XINT5 юнем╥╢ф╝╧ъ╩Ща╤╟г╪Ёа╓: ют╥б╫ехёюгго╟╜©╖аЖ
-	XIntruptRegs.XINT6CR.bit.POLARITY = 1;      // XINT6 юнем╥╢ф╝╧ъ╩Ща╤╟г╪Ёа╓: ют╥б╫ехёюгго╟╜& ╩С╫б©╖аЖ
+	XIntruptRegs.XINT3CR.bit.POLARITY = 2;      // XINT3 Л²╦М└╟К÷╫М┼╦К╟°Л┐²Л║╟Й╠╢Л└╓Л═∙: Л·┘К═╔Л▀═М≤╦Л²≤М∙≤Й╟∙Л≈ёЛ╖─
+	XIntruptRegs.XINT4CR.bit.POLARITY = 1;      // XINT4 Л²╦М└╟К÷╫М┼╦К╟°Л┐²Л║╟Й╠╢Л└╓Л═∙: Л·┘К═╔Л▀═М≤╦Л²≤Л┐│Л┼╧Л≈ёЛ╖─
+	XIntruptRegs.XINT5CR.bit.POLARITY = 1;      // XINT5 Л²╦М└╟К÷╫М┼╦К╟°Л┐²Л║╟Й╠╢Л└╓Л═∙: Л·┘К═╔Л▀═М≤╦Л²≤М∙≤Й╟∙Л≈ёЛ╖─
+	XIntruptRegs.XINT6CR.bit.POLARITY = 1;      // XINT6 Л²╦М└╟К÷╫М┼╦К╟°Л┐²Л║╟Й╠╢Л└╓Л═∙: Л·┘К═╔Л▀═М≤╦Л²≤М∙≤Й╟∙& Л┐│Л┼╧Л≈ёЛ╖─
 
-	XIntruptRegs.XINT3CR.bit.ENABLE = 1;        // XINT3 юнем╥╢ф╝: Enable
-	XIntruptRegs.XINT4CR.bit.ENABLE = 1;        // XINT4 юнем╥╢ф╝: Enable
-	XIntruptRegs.XINT5CR.bit.ENABLE = 1;        // XINT5 юнем╥╢ф╝: Enable
-	XIntruptRegs.XINT6CR.bit.ENABLE = 1;        // XINT6 юнем╥╢ф╝: Enable
+	XIntruptRegs.XINT3CR.bit.ENABLE = 1;        // XINT3 Л²╦М└╟К÷╫М┼╦: Enable
+	XIntruptRegs.XINT4CR.bit.ENABLE = 1;        // XINT4 Л²╦М└╟К÷╫М┼╦: Enable
+	XIntruptRegs.XINT5CR.bit.ENABLE = 1;        // XINT5 Л²╦М└╟К÷╫М┼╦: Enable
+	XIntruptRegs.XINT6CR.bit.ENABLE = 1;        // XINT6 Л²╦М└╟К÷╫М┼╦: Enable
 
-	// ©э╨нюнемемф╝фВгу╣х╧Иемх╟╪╨х╜
-	PieCtrlRegs.PIEIER12.bit.INTx1 = 1;         // PIE юнем╥╢ф╝(XINT3) : Enable
-	PieCtrlRegs.PIEIER12.bit.INTx2 = 1;         // PIE юнем╥╢ф╝(XINT4) : Enable
-	PieCtrlRegs.PIEIER12.bit.INTx3 = 1;         // PIE юнем╥╢ф╝(XINT5) : Enable
-	PieCtrlRegs.PIEIER12.bit.INTx4 = 1;         // PIE юнем╥╢ф╝(XINT6) : Enable
-	IER |= M_INT12;                        // CPU юнем╥╢ф╝(INT12) : Enable
+	// Л≥╦К╤─Л²╦М└╟М└╟М┼╦М▐╛М∙╘К░°К╟╠М└╟М≥°Л└╠М≥■
+	PieCtrlRegs.PIEIER12.bit.INTx1 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT3) : Enable
+	PieCtrlRegs.PIEIER12.bit.INTx2 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT4) : Enable
+	PieCtrlRegs.PIEIER12.bit.INTx3 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT5) : Enable
+	PieCtrlRegs.PIEIER12.bit.INTx4 = 1;         // PIE Л²╦М└╟К÷╫М┼╦(XINT6) : Enable
+	IER |= M_INT12;                        // CPU Л²╦М└╟К÷╫М┼╦(INT12) : Enable
 	//============================================================================================
 
 
@@ -1061,12 +1061,12 @@ void main(void)
 
 }
 //============================================================================================
-//   ╦чюнгт╪Ж- Ё║
+//   К╘■Л²╦М∙╗Л┬≤- К│²
 //============================================================================================
 
 
 //============================================================================================
-//   ISR гт╪Жа╓юг
+//   ISR М∙╗Л┬≤Л═∙Л²≤
 //--------------------------------------------------------------------------------------------
 interrupt void Xint3_isr(void)
 {
